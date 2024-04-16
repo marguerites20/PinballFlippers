@@ -1,0 +1,24 @@
+// Pin definitions
+const int buttonPin = 2;    // The pushbutton pin
+const int solenoidPin = 7;  // The solenoid pin
+
+void setup() {
+  // Initialize the pushbutton pin as an input
+  pinMode(buttonPin, INPUT);
+  // Initialize the solenoid pin as an output
+  pinMode(solenoidPin, OUTPUT);
+}
+
+void loop() {
+  // Read the state of the pushbutton
+  int buttonState = digitalRead(buttonPin);
+
+  // If the pushbutton is pressed (LOW state)
+  if (buttonState == LOW) {
+    // Activate the solenoid
+    digitalWrite(solenoidPin, HIGH);
+    delay(1000); // Adjust the delay time as needed
+    // Deactivate the solenoid
+    digitalWrite(solenoidPin, LOW);
+  }
+}
